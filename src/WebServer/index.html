@@ -1,0 +1,49 @@
+<!DOCTYPE HTML><html><head>
+    <title>Coin Ticker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      html {font-family: Times New Roman; display: inline-block; text-align: center;}
+      h1 {font-size: 3.0rem; color: #000000;}
+      form.input {font-size: 1.3rem; color: #000000; border: 1px solid #ddd; padding: 12px;}
+      input {  font-weight: bold}
+     table {border-collapse: collapse; margin-left:auto; margin-right:auto; }
+              th { padding: 12px; background-color: #0043af; color: white; }
+              tr { border: 1px solid #ddd; padding: 12px; }
+              tr:hover { background-color: #bcbcbc; }
+              td { border: none; padding: 12px; }
+              .sensor { color:white; font-weight: bold; background-color: #bcbcbc; padding: 1px; }
+              .reset { color:rgb(184, 7, 7);  }
+    </style>
+    <script>
+      function submitMessage() {
+        alert("Saved value to ESP SPIFFS");
+        setTimeout(function(){ document.location.reload(false); }, 500);   
+      }
+    </script></head><body>
+  
+    <form>
+              <h1>JP Coin Ticker</h1>
+          </form><br>
+          
+          <form>
+              <table>
+                  <tr>Aktuell hinterlegt:</th>
+                  %inputTable%
+                      
+              </table>           
+          </form><br> 
+    <form action="/get" target="hidden-form">
+      Coin Hinzufügen(current value %inputString%): <input type="text" name="inputString">
+      <input type="submit" value="Speichern" onclick="submitMessage()">
+      <input type="submit" value="Löschen" onclick="submitMessage()">
+    </form><br>
+    <form class="input" action="/get" target="hidden-form">
+        Brightness (Aktuell %inputBright%): <br><input type="text" name="inputBright">
+        <input  type="submit" value="Speichern" onclick="submitMessage()">
+      </form><br>
+      <form action="/get" target="hidden-form">
+        Brightness (Aktuell %inputSpeed%): <input type="text" name="inputSpeed">
+        <input class="reset" type="submit" value="Speichern" onclick="submitMessage()">
+      </form><br>
+    
+    <iframe style="display:none" name="hidden-form"></iframe>

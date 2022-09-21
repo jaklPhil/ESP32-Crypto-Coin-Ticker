@@ -2,8 +2,8 @@
 ## An ESP32 based Cypto-Coin-Ticker with a local webserver for configuration.
 ### The coins are diplayed using a Max7219 led matrix display. 
 ### [See the coin ticker in action (Youtube)](https://www.youtube.com/watch?v=w_j1PZ59WdM&ab_channel=JPLittle)
-![Cryptocoin Ticker](CoinTicker.jpg "Cryptocoin Ticker")
 
+<img src="CoinTicker.jpg" width="600">
 
 # Build
 ## Hardware
